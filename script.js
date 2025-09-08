@@ -40,6 +40,7 @@ function playGame(){
             console.log("You Lose!! Paper beats Rock");
             computerScore++;
         } 
+        
 
         console.log("Your Score: ", humanScore);
         console.log("Computer's Score: ", computerScore);
@@ -49,6 +50,10 @@ function playGame(){
     for (let i = 0; i < 5; i++) {
         let humanSelection = getUserChoice();
         let computerSelection = getComputerChoice();
+        if (humanSelection == computerSelection){
+            console.log("It's a tie.")
+            --i;
+        }
         playRound(humanSelection, computerSelection);
     }
 
